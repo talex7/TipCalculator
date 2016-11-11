@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *billAmountTextField;
 @property (weak, nonatomic) IBOutlet UILabel *tipAmountLabel;
 @property (weak, nonatomic) IBOutlet UITextField *tipPercentageTextField;
@@ -31,6 +31,9 @@
                selector:@selector(keyboardWillHide)
                    name:UIKeyboardWillHideNotification
                  object:nil];
+    
+    self.tipPercentageTextField.delegate = self;
+    self.billAmountTextField.delegate = self;
 }
 
 
@@ -39,7 +42,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)calculateTip:(UIButton *)sender {
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    textField.text = @"";
+}
+
+- (IBAction)onButtonTapped:(UIButton *)sender {
+    
     CGFloat tipPercent = [self.tipPercentageTextField.text floatValue] / 100.00;
     CGFloat tipAmount =  [self.billAmountTextField.text floatValue] * tipPercent;
     CGFloat totalAmount = [self.billAmountTextField.text floatValue] * (tipPercent + 1);
