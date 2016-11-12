@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *tipAmountLabel;
 @property (weak, nonatomic) IBOutlet UITextField *tipPercentageTextField;
 @property (weak, nonatomic) IBOutlet UILabel *totalAmountLabel;
+@property (weak, nonatomic) IBOutlet UIButton *calculateTipButton;
 
 @end
 
@@ -46,6 +47,22 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     textField.text = @"";
 }
+
+//functionality without button (added to separate version of program)
+
+//-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+//    [self onButtonTapped:self.calculateTipButton];
+//    return YES;
+//}
+
+//-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+//    CGFloat tipPercent = [self.tipPercentageTextField.text floatValue] / 100.00;
+//    CGFloat tipAmount =  [self.billAmountTextField.text floatValue] * tipPercent;
+//    CGFloat totalAmount = [self.billAmountTextField.text floatValue] * (tipPercent + 1);
+//    self.tipAmountLabel.text = [NSString stringWithFormat:@"$%.02f", tipAmount];
+//    self.totalAmountLabel.text = [NSString stringWithFormat:@"$%.02f", totalAmount];
+//    return YES;
+//}
 
 - (IBAction)onButtonTapped:(UIButton *)sender {
     

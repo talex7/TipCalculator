@@ -53,6 +53,9 @@
                                 <state key="normal" title="*Calculate Tip*">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="onButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Kf-dy-BIA"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Tip %" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2sB-ga-my7">
                                 <rect key="frame" x="166" y="294.5" width="110" height="30"/>
@@ -140,6 +143,7 @@
                     </view>
                     <connections>
                         <outlet property="billAmountTextField" destination="kPn-Wr-7Ok" id="xAb-oa-M9O"/>
+                        <outlet property="calculateTipButton" destination="7Im-mN-JzI" id="g0Q-F3-YlX"/>
                         <outlet property="tipAmountLabel" destination="9ax-6v-5Bw" id="tYK-4d-sfw"/>
                         <outlet property="tipPercentageTextField" destination="2sB-ga-my7" id="X54-7F-UAs"/>
                         <outlet property="totalAmountLabel" destination="Wic-kY-sTd" id="vPw-Bb-5rC"/>
